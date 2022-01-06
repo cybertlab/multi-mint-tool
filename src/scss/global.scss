@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "VCR OSD Mono";
+  color: $primaryColor;
+  background: $bgColor;
+  height: 100%;
+  padding-top: 130px;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: 100%;
+    // background: url("../images/bg.svg");
+    // background-size: cover;
+    background-color: #282c34;
+  }
+  @media (max-width: 800px) {
+    padding-top: 101px;
+    &:after {
+      background-size: initial;
+    }
+  }
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: $primaryColor;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.text-scroll {
+  display: flex;
+  align-items: center;
+  background: url("../images/walking-text.svg");
+  background-position: center;
+  height: 336px;
+  margin-left: -25px;
+  overflow: hidden;
+  .content {
+    display: flex;
+    transform: rotate(-5.23deg);
+    padding-bottom: 13px;
+    width: 100%;
+  }
+  @media (min-width: 2000px) {
+    height: 400px;
+  }
+  @media (min-width: 2500px) {
+    height: 550px;
+  }
+  @media (min-width: 3500px) {
+    height: 650px;
+  }
+  @media (max-width: 500px) {
+    height: 200px;
+    margin-bottom: -30px;
+  }
+}
+
+.marquee {
+  display: flex;
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+  .marquee__inner {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 5s linear infinite;
+  }
+  span {
+    margin-right: 35.74px;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 2s ease;
+    white-space: nowrap;
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-left: 46.26px;
+      border: 1px solid black;
+      border-radius: 50%;
+    }
+
+    &:nth-child(3n-2) {
+      &:after {
+        background: #eb8618 !important;
+      }
+    }
+    &:nth-child(2n + 2),
+    &:nth-child(5n),
+    &:nth-child(5n + 1) {
+      &:after {
+        background: #dfe557;
+      }
+    }
+    &:nth-child(3n) {
+      &:after {
+        background: #e04a94;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    font-size: 22px;
+    margin-right: 28px;
+    &:after {
+      margin-left: 28px;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}

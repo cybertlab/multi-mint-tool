@@ -1,0 +1,13 @@
+{
+    "maxMint": 5,
+    "contractAddress": "0x75037235D70c6264971e2BB55F172a350a08f021",
+    "maxPriorityFeePerGas":"5",
+    "maxFeePerGas":"5",
+    "valuePerNft":0.03,
+    "abi":"function mintDuckyET(uint256 numberOfDucky, bytes32[] calldata merkleProof) external payable",
+    "rpcApi":"https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+    "startTime":"20211231T094700",
+    "privKeys":[
+        "0x82b17cf9da0c7394b7c9830a0ddb1789c229ef0b9d5ed2e6d90e9d813882eb91"
+    ]
+}
