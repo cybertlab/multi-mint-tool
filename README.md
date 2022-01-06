@@ -8,7 +8,7 @@
 -->
 
 ## Available Scripts
-
+多账户mint工具，请下载后按说明配置后使用
 In the project directory, you can run:
 
 ## Requirements:
